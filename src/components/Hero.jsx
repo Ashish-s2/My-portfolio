@@ -1,27 +1,28 @@
-import { Typewriter } from 'react-simple-typewriter';
-import { motion } from 'framer-motion';
-import { FaDownload, FaRocket } from 'react-icons/fa';
+import React from "react";
+import { Typewriter } from "react-simple-typewriter";
+import { motion } from "framer-motion";
+import { FaDownload, FaRocket } from "react-icons/fa";
 
-const Hero = () => {
+function Hero() {
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center text-center px-4 bg-gradient-to-b from-[#0f0c29] via-[#302b63] to-[#24243e] text-white">
+    <section className="min-h-[80vh] flex flex-col justify-center items-center text-center px-4 bg-gradient-to-b from-blue-50 via-white to-blue-100 text-gray-800">
       <motion.h1
-        initial={{ opacity: 0, y: -40 }}
+        initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="text-5xl sm:text-6xl font-bold mb-4"
+        className="text-4xl sm:text-5xl font-extrabold mb-4"
       >
-        Hey, I'm <span className="text-pink-400">Ashish Sahu</span>
+        Hey, I'm <span className="text-blue-600">Ashish Sahu</span>
       </motion.h1>
 
       <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 0.5, duration: 1 }}
-        className="text-xl mb-6"
+        transition={{ delay: 0.4, duration: 1 }}
+        className="text-xl sm:text-2xl mb-6"
       >
         <Typewriter
-          words={['Aspiring Data Scientist 💻', 'Fullstack Developer 🚀', 'AI/ML Enthusiast 🤖']}
+          words={["Aspiring Data Scientist 💻", "Fullstack Developer 🚀", "ML Enthusiast 🤖"]}
           loop={true}
           cursor
           cursorStyle="_"
@@ -34,25 +35,25 @@ const Hero = () => {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1, duration: 1 }}
-        className="flex gap-4"
+        transition={{ delay: 0.8, duration: 1 }}
+        className="flex gap-4 flex-wrap justify-center"
       >
         <a
-          href="/Ashish_Sahu_Resume.pdf"
+          href="/Ashish-Sahu-Resume.pdf"
           download
-          className="bg-pink-500 hover:bg-pink-600 text-white px-6 py-3 rounded-full flex items-center gap-2"
+          className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full flex items-center gap-2 transition"
         >
-          <FaDownload /> Resume
+          <FaDownload /> Download Resume
         </a>
         <a
-          href="#projects"
-          className="bg-white hover:bg-gray-100 text-gray-900 px-6 py-3 rounded-full flex items-center gap-2"
+          href="/projects"
+          className="bg-gray-100 hover:bg-gray-200 text-blue-700 px-6 py-3 rounded-full flex items-center gap-2 transition"
         >
           <FaRocket /> View Projects
         </a>
       </motion.div>
     </section>
   );
-};
+}
 
 export default Hero;
